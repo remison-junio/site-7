@@ -4,6 +4,21 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Samar</title>
+
+		<!--Fonts-->
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;1,200;1,300&family=Poppins:wght@300;500&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+
+
+		<!--Icons-->
+
+		<link rel="stylesheet" href="icofont/icofont.min.css">
+
+		<!--CSS-->
+
+		<link rel="stylesheet" type="text/css" href="css/estilo.css">
 	</head>
 	<body>
 
@@ -11,44 +26,59 @@
 
 		<header>
 			<div class="container">
-				<nav>
-					<ul>
+				<nav class="nav-contact">
+					<ul class="nav-contact-email-number">
 						<li>
+							<i class="icofont-ui-message"></i>
 							<span>info@example.com</span>
 						</li>
 						<li>
-							<span>info@example.com</span>
+							<i class="icofont-phone"></i>
+							<span>+91 987-654-3210</span>
 						</li>
 					</ul>
 
-					<ul>
+					<ul class="redes-sociais">
 						<li>
-							<a href="">F</a>
+							<a href=""><i class="icofont-facebook"></i></a>
 						</li>
 
 						<li>
-							<a href="">I</a>
+							<a href=""><i class="icofont-instagram"></i></a>
 						</li>
 
 						<li>
-							<a href="">T</a>
+							<a href=""><i class="icofont-twitter"></i></a>
 						</li>
 					</ul>
 				</nav>
 				
-				<div>
-					<a href="">Logo</a>
+				<div class="navegacao">
+					<a href="">
+						<img class="logo" src="img/logo-black.png">
+					</a>
 
-					<nav>
-						<ul>
+					<nav class="navegacao-nav">
+						<ul class="nav-menu">
 							<li>
-								<a href="">Home</a>
+								<a href="">
+									<img class="nav-menu-logo" src="img/logo-black.png">
+								</a>
 							</li>
 
-							<li>
-								<span>Pages</span>
+							<li class="nav-menu-item">
+								<a class="nav-menu-btn" href="">
+									<span>Home</span>
+								</a>
+							</li>
 
-								<ul>
+							<li class="nav-menu-item">
+								<a class="nav-menu-btn btn-sub-menu">
+									<span>Pages</span>
+									<i class="icofont-rounded-right seta-mobile"></i>
+								</a>
+								
+								<ul class="sub-menu">
 									<li>
 										<a href="">About Us</a>
 									</li>
@@ -73,10 +103,13 @@
 								</ul>
 							</li>
 
-							<li>
-								<span>Services</span>
+							<li class="nav-menu-item">
+								<a class="nav-menu-btn btn-sub-menu">
+									<span>Services</span>
+									<i class="icofont-rounded-right seta-mobile"></i>
+								</a>
 
-								<ul>
+								<ul class="sub-menu">
 									<li>
 										<a href="">Services</a>
 									</li>
@@ -86,10 +119,13 @@
 								</ul>
 							</li>
 
-							<li>
-								<span>Blog</span>
+							<li class="nav-menu-item">
+								<a class="nav-menu-btn btn-sub-menu">
+									<span>Blog</span>
+									<i class="icofont-rounded-right seta-mobile"></i>
+								</a>
 
-								<ul>
+								<ul class="sub-menu">
 									<li>
 										<a href="">Blog Grid</a>
 									</li>
@@ -99,30 +135,32 @@
 								</ul>
 							</li>
 
-							<li>
-								<a href="">Contact Us</a>
+							<li class="nav-menu-item">
+								<a href="" class="nav-menu-btn">Contact Us</a>
 							</li>
 
-							<li>
+							<li class="nav-menu-item nav-menu-redes-sociais">
 								<ul>
 									<li>
-										<a href="">F</a>
+										<a href=""><i class="icofont-facebook"></i></a>
 									</li>
 									<li>
-										<a href="">T</a>
+										<a href=""><i class="icofont-twitter"></i></a>
 									</li>
 									<li>
-										<a href="">in</a>
+										<a href=""><i class="icofont-linkedin"></i></a>
 									</li>
 									<li>
-										<a href="">I</a>
+										<a href=""><i class="icofont-instagram"></i></a>
 									</li>
 								</ul>
 							</li>
 						</ul>
 
-						<button>Get	A Quote</button>
-						<button>E</button>
+						<div class="navegacao-nav-botoes">
+							<button>Get	A Quote</button>
+							<button>E</button>
+						</div>	
 					</nav>
 				</div>	
 			</div>
