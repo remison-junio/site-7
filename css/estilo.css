@@ -15,11 +15,11 @@ html {
 
 .nav-contact {
 	/*flex na tela maior*/
-	display: none;
+	display: flex;
 	justify-content: space-between;
-	padding: 10px 0;
+	height: 55px;
 	border-bottom: 1px solid red;
-	background: pink;
+	background: transparent;
 	align-items: center;
 }
 
@@ -73,21 +73,41 @@ html {
 /*Menu*/
 
 .navegacao {
-	display: block;
+	display: flex;
+	height: 85px;
+	align-items: center;
+	background: transparent;
 }
 
-.navegacao-nav, .nav-menu, .menu {
+.nav-menu, .menu {
 	display: block;
 }
 
 .navegacao {
 	justify-content: space-between;
 	border: 1px solid red;
-	background: pink;
+}
+
+.logo {
+	width: 150px;
 }
 
 .navegacao-nav {
 	border: 1px solid red;
+	display: flex;
+	align-items: center;
+}
+
+.navegacao-nav-bg {
+	content: '';
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: black;
+	opacity: 0.4;
+	visibility: hidden;
 }
 
 .nav-menu {
@@ -102,6 +122,11 @@ html {
 	left: 0;
 	width: 250px;
 	padding: 20px 20px;
+	visibility: hidden;
+}
+
+.navegacao-nav.active .nav-menu, .navegacao-nav.active .navegacao-nav-bg{
+	visibility: visible;
 }
 
 .nav-menu-btn {
@@ -142,22 +167,33 @@ html {
 }
 
 .sub-menu {
-	margin-top: 20px;
+	margin-top: 10px;
 	display: none;
 }
 
+.sub-menu.active {
+	display: block;
+}
+
 .sub-menu li {
-	border: 1px solid red;
 	padding: 5px 0;
 }
 
 .sub-menu li a {
-	color: #262f5a;
 	display: block;
+	color: #262f5a;
 }
 
-.navegacao-nav-botoes {
-	border: 1px solid red;
+.sub-menu li a i {
+	margin-right: 2px;
+}
+
+.sub-menu li a span {
+	font-weight: 400;
+}
+
+.sub-menu li a:hover span {
+	color: #f55f8d;
 }
 
 .nav-menu-logo {
@@ -178,9 +214,116 @@ html {
 	padding: 5px 8px;
 	display: block;
 	color: #f55f8d;
-	transition: .2s;
 }
 
 .nav-menu-redes-sociais li a:hover {
 	color: #f9014c;
 }
+
+.navegacao-nav-botoes {
+	display: flex;
+	align-items: center;
+}
+
+.navegacao-nav-botoes .btn-get {
+	display: block;
+	padding: 12px 35px;
+	color: white;
+	font-size: 17px;
+	border-radius: 30px;
+	font-weight: 500;
+	background: linear-gradient(90deg,#f55f8d 20%,#f8ae56);
+}
+
+.btn-hamburger {
+	border: 1px solid red;
+	padding: 5px;
+	font-size: 22px;
+	color: white;
+	margin-left: 15px;
+	position: relative;
+	cursor: pointer;
+	background: transparent;
+}
+
+.icofont-close {
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	visibility: hidden;
+}
+
+.navegacao-nav.active .icofont-navigation-menu {
+	visibility: hidden;
+}
+
+.navegacao-nav.active .icofont-close{
+	visibility: visible;
+	z-index: 100;
+}
+
+/*Home*/
+
+.home {
+	background-image: url(../img/banner.jpg);
+	height: 450px;
+	background-size: cover;
+	position: relative;
+	top: -140px;
+	z-index: -1;
+}
+
+.home:before {
+	background: linear-gradient(90deg,#f55f8d 20%,#f8ae56);
+	content: '';
+	height: 450px;
+	width: 100%;
+	position: absolute;
+	opacity: .8;
+}
+
+.home:after {
+	background-image: url(../img/bolinhas.png);
+	width: 100%;
+	content: '';
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+	background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.conteudo-home {
+	border: 1px solid blue;
+	padding-top: 200px;
+	text-align: center;
+	position: relative;
+}
+
+.conteudo-home h1 {
+	font-size: 60px;
+	color: white;
+	margin-bottom: 20px;
+}
+
+.conteudo-home div {
+	border: 1px solid red;
+	display: flex;
+	align-items: center;
+	padding: 5px 0;
+	justify-content: center;
+}
+
+.conteudo-home div, .conteudo-home div a {
+	color: white;
+	font-size: 18px;
+}
+
+.conteudo-home div {
+	cursor: pointer;
+}
+
