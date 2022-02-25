@@ -272,7 +272,8 @@ html {
 	background-size: cover;
 	position: relative;
 	top: -140px;
-	z-index: -1;
+	z-index: 1;
+	margin-bottom: -80px;
 }
 
 .home:before {
@@ -282,6 +283,7 @@ html {
 	width: 100%;
 	position: absolute;
 	opacity: .8;
+	z-index: -1;
 }
 
 .home:after {
@@ -295,10 +297,10 @@ html {
 	background-position: bottom;
     background-repeat: no-repeat;
     background-size: contain;
+    z-index: -1;
 }
 
 .conteudo-home {
-	border: 1px solid blue;
 	padding-top: 200px;
 	text-align: center;
 	position: relative;
@@ -310,20 +312,234 @@ html {
 	margin-bottom: 20px;
 }
 
-.conteudo-home div {
-	border: 1px solid red;
+.conteudo-home-textos {
 	display: flex;
 	align-items: center;
 	padding: 5px 0;
 	justify-content: center;
+	z-index: 1000;
 }
 
-.conteudo-home div, .conteudo-home div a {
+.conteudo-home-textos, .conteudo-home-textos a {
 	color: white;
 	font-size: 18px;
 }
 
-.conteudo-home div {
+/*Cards*/
+
+.conteudo-card-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	column-gap: 30px;
+	grid-row-gap: 50px;
+}
+
+.card-item {
+	position: relative;
+}
+
+.card-item img {
+	width: 100%;
+	border-radius: 20px;
+}
+
+.card-item .card-item-media:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 84px;
+	left: 0;
+	right: 0;
+	background-color: rgb(245,95,141);
+	opacity: 0;
+	visibility: hidden;
+	border-radius: 20px;
+	z-index: 1;
+	transition: .5s;
+}
+
+.card-item:hover .card-item-media:before {
+	opacity: .7;
+	visibility: visible;
+	
+}
+
+.card-item-textos {
+	height: 80px;
+	border: 1px solid red;
+}
+
+.card-item h3 {
+	font-size: 30px;
+	font-weight: 700;
+	margin-bottom: 5px;
+}
+
+.card-item p {
+	font-size: 17px;
+	color: #636363;
+}
+
+.card-item .redes-sociais {
+	justify-content: center;
+	position: absolute;
+	top: calc(50% - 40px);
+	transform: translateY(-50%);
+	left: 0;
+	right: 0;
+	visibility: hidden;
+	opacity: 0;
+	z-index: 2;
+	transition: .5s;
+}
+
+.card-item:hover .redes-sociais {
+	opacity: 1;
+	visibility: visible;
+}
+
+/*Seção 3*/
+
+.secao-3 {
+	margin-top: 100px;
+	background-color: #0e1b1f;
+	padding-bottom: 50px;
+}
+
+/*Subscribe*/
+
+.subscribe {
+	display: grid;
+	grid-template-columns: 1fr;
+	padding: 30px;
+	background: white;
+	border-radius: 20px;
+	margin-bottom: 50px;
+	position: relative;
+	top: -30px;
+	border: 1px solid red;
+}
+
+.subscribe h2 {
+	font-size: 30px;
+	margin-bottom: 30px;
+}
+
+.subscribe-input {
+	position: relative;
+}
+
+.subscribe-input input {
+	width: 100%;
+	font-size: 16px;
+	color: #636363;
+	border: 1px solid transparent;
+	padding: 10px 18px;
+	border-radius: 25px;
+	height: 45px;
+	transition: border-color .3s;
+}
+
+.subscribe-input input:focus {
+	border: 1px solid #f55f8d;;
+	outline: 0;
+}
+
+.subscribe-input button {
+	background: linear-gradient(90deg,#f55f8d 20%,#f8ae56);
+	position: absolute;
+	width: 45px;
+	right: 0;
+	height: 45px;
+	top: 0;
+	border-radius: 50%;
 	cursor: pointer;
 }
 
+.subscribe-input button i{
+	font-size: 25px;
+	color: white;
+}
+
+/*Seção 3 menu*/
+
+.secao-3-menu {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-row-gap: 40px;
+}
+
+.secao-3-menu-contact {
+	border: 1px solid red;
+}
+
+.secao-3-menu-contact ul {
+	margin-top: 20px;
+}
+
+.secao-3-menu-contact ul li {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.secao-3-menu-contact ul li p {
+	font-size: 18px;
+	font-weight: 500;
+	color: white;
+	padding: 2px;
+}
+
+.secao-3-menu-contact ul li i {
+	color: white;
+	padding: 10px;
+	border-radius: 50%;
+	margin-right: 10px;
+	background: linear-gradient(90deg,#f55f8d 20%,#f8ae56);
+}
+
+/*Seção 3 menu itens*/
+
+.secao-3-menu-item h3 {
+	font-size: 25px;
+	color: white;
+}
+
+.secao-3-menu-item ul {
+	margin-top: 20px;
+}
+
+.secao-3-menu-item ul li a {
+	display: block;
+	font-size: 17px;
+	font-weight: 500;
+	padding: 8px 0;
+	color: white;
+}
+
+.secao-3-menu-item ul li a span{
+	transition: .4s;
+	display: inline-block;
+}
+
+.secao-3-menu-item ul li a:hover span{
+	transform: translateX(10px);
+}
+
+/*Footer*/
+
+.footer {
+	text-align: center;
+	background-color: #1f343b;
+	padding: 15px 0;
+}
+
+.footer p {
+	color: white;
+	margin-bottom: 15px;
+	font-weight: 600;
+}
+
+.footer .redes-sociais{
+	justify-content: center;
+}
