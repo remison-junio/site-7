@@ -11,16 +11,22 @@ html {
 	font-family: Source Sans Pro, sans-serif;
 }
 
+.container {
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
 /*Nav Contact*/
 
 .nav-contact {
-	/*flex na tela maior*/
-	display: flex;
 	justify-content: space-between;
 	height: 55px;
 	border-bottom: 1px solid red;
 	background: transparent;
 	align-items: center;
+	position: relative;
+	z-index: 2;
+	display: none;
 }
 
 .nav-contact-email-number {
@@ -77,9 +83,11 @@ html {
 	height: 85px;
 	align-items: center;
 	background: transparent;
+	position: relative;
+	z-index: 2;
 }
 
-.nav-menu, .menu {
+.menu {
 	display: block;
 }
 
@@ -112,9 +120,10 @@ html {
 
 .nav-menu {
 	font-size: 17px;
+	display: block;
 	background: white;
 	color: #262f5a;
-	border: 1px solid red;
+	border: 1px solid blue;
 	position: fixed;
 	overflow-y: auto;
 	top: 0;
@@ -175,13 +184,11 @@ html {
 	display: block;
 }
 
-.sub-menu li {
-	padding: 5px 0;
-}
-
 .sub-menu li a {
 	display: block;
 	color: #262f5a;
+	border: 1px solid red;
+	padding: 5px 0;
 }
 
 .sub-menu li a i {
@@ -226,7 +233,7 @@ html {
 }
 
 .navegacao-nav-botoes .btn-get {
-	display: block;
+	display: none;
 	padding: 12px 35px;
 	color: white;
 	font-size: 17px;
@@ -268,7 +275,7 @@ html {
 
 .home {
 	background-image: url(../img/banner.jpg);
-	height: 450px;
+	height: 400px;
 	background-size: cover;
 	position: relative;
 	top: -140px;
@@ -279,7 +286,7 @@ html {
 .home:before {
 	background: linear-gradient(90deg,#f55f8d 20%,#f8ae56);
 	content: '';
-	height: 450px;
+	height: 400px;
 	width: 100%;
 	position: absolute;
 	opacity: .8;
@@ -542,4 +549,179 @@ html {
 
 .footer .redes-sociais{
 	justify-content: center;
+}
+
+.footer-btn-esquerda {
+	position: fixed;
+	left: 15px;
+	color: white;
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	display: flex;
+	align-items: center;
+	overflow-x: hidden;
+	transition: .5s;
+	z-index: 10;
+}
+
+.footer-btn-esquerda i {
+	margin-left: 12px;
+	margin-right: 10px;
+	font-size: 25px;
+}
+
+.footer-btn-esquerda span {
+	font-size: 15px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	opacity: 0;
+	margin-left: 5px;
+}
+
+.footer-btn-esquerda:hover span {
+	opacity: 1;
+}
+
+.footer-btn-esquerda:hover {
+	width: 140px;
+}
+
+.btn-support {
+	bottom: 70px;
+	background: linear-gradient(45deg,#1ebbf0 8%,#39dfaa);
+}
+
+.btn-buynow {
+	bottom: 10px;
+	background: linear-gradient(180deg,#a3d179 0,#88ba46);
+}
+
+.btn-aoTopo {
+	position: fixed;
+	right: 15px;
+	width: 50px;
+	height: 50px;
+	border-radius: 7px;
+	bottom: 10px;
+	background: #f55f8d;
+	color: white;
+	font-size: 25px;
+	cursor: pointer;
+	z-index: 10;
+}
+
+/*Responsividade*/
+
+@media(min-width: 576px) {
+	.container {
+		max-width: 540px;
+	}
+
+	.navegacao-nav-botoes .btn-get {
+		display: block;
+	}
+}
+
+@media(min-width: 768px) {
+	.container {
+		max-width: 720px;
+	}
+
+	.nav-contact {
+		display: flex;
+	}
+}
+
+@media(min-width: 992px) {
+	.container {
+		max-width: 960px;
+	}
+
+	/*Menu*/
+
+	.nav-menu {
+		font-size: 17px;
+		display: flex;
+		background: white;
+		color: #262f5a;
+		position: static;
+		overflow-y: auto;
+		width: auto;
+		padding: 0;
+		visibility: visible;
+	}
+
+	.nav-menu-item {
+		border: 1px solid red;
+	}
+
+	.nav-menu-item .nav-menu-btn {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+		padding: 40px 15px;
+	}
+	
+	.seta-mobile {
+		padding: 0px;
+		background-color: transparent;
+		transform: rotate(90deg);
+		color: black;
+		position: relative;
+		top: 2px;
+	}
+
+	.sub-menu {
+		border: 1px solid red;
+		display: none;
+		position: absolute;
+		z-index: 1000;
+		top: 80px;
+		width: 200px;
+		background: white;
+		margin-left: -15px;	
+		margin-top: 0px;
+	}
+
+	.sub-menu.active {
+		display: block;
+		padding: 20px;
+	}
+
+	.sub-menu li a {
+		position: relative;
+		border: 1px solid red;
+		padding: 10px 0;
+	}
+
+	.sub-menu li a:before {
+		content: '';
+		height: 0.1px;
+		width: 0px;
+		background-color: rgba(245,95,141);
+		position: absolute;
+		left: 0px;
+		top: 50%;
+		transform: translateY(-50%);
+		transition: .3s;
+	}
+
+	.sub-menu li a:hover:before {
+		width: 8px;
+	}
+
+	.sub-menu li a span {
+		display: block;
+		transition: .3s;
+	}
+
+	.sub-menu li a:hover span {
+		transform: translateX(8px);
+		margin-left: 3px;
+	}
+
+	.nav-menu-logo, .nav-menu-redes-sociais, .btn-hamburger, .sub-menu a i  {
+		display: none;
+	}	
 }
