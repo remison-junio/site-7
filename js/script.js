@@ -18,21 +18,38 @@ btnSubMenu.forEach((item, indice)=> {
 });
 
 const navMenuDrop = document.querySelectorAll('.nav-menu-item-drop')
-console.log(navMenuDrop)
 
-navMenuDrop.forEach((item, indice)=> {
-	item.addEventListener('mouseenter', ()=> {
-		subMenu.forEach((item, indice)=> {
-			item.classList.remove('active');
-		});
+function dropDown() {
+	navMenuDrop.forEach((item, indice)=> {
+		item.addEventListener('mouseenter', ()=> {
+			subMenu.forEach((item, indice)=> {
+				item.classList.remove('drop');
+			});
 
-		subMenu[indice].classList.add('active');
+			subMenu[indice].classList.add('drop');
+		})
+
+		item.addEventListener('mouseleave', ()=> {
+			subMenu.forEach((item, indice)=> {
+				item.classList.remove('drop');
+			});
+			
+		})
 	})
+}
 
-	item.addEventListener('mouseleave', ()=> {
-		subMenu.forEach((item, indice)=> {
-			item.classList.remove('active');
-		});
-		
-	})
+let w =  window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+if (w >= 992) {
+	dropDown();
+}
+
+window.onresize = function() {
+    let w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    if (w >= 992) {
+        dropDown();
+    }
+};
+
+const btnAoTopo = document.querySelector('.btn-ao-topo').addEventListener('click', ()=> {
+	
 })
