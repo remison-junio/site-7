@@ -847,7 +847,7 @@ html {
 	/*Seção 3 menu*/
 
 	.secao-3-menu {
-		grid-template-columns: 300px 180px 1fr 1fr;
+		grid-template-columns: 300px 140px 1fr 1fr;
 		column-gap: 20px;
 	}
 }
